@@ -1,5 +1,7 @@
 package com.example.chesswebapp.todo;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 // Database (MySQL)
@@ -11,14 +13,17 @@ public class Todo {
         super();
         this.id = id;
         this.username = username;
+
+
         this.description = description;
         this.targetDate = targetDate;
         this.done = done;
     }
 
+    @Size(min=10, message="Enter at least 10 characters.")
+    private String description;
     private int id;
     private String username;
-    private String description;
     private LocalDate targetDate;
     private boolean done;
 
