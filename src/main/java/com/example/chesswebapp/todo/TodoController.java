@@ -65,7 +65,7 @@ public class TodoController {
     }
 
     @RequestMapping(value="update-todo", method=RequestMethod.POST)
-    public String UpdateTodo(ModelMap model, @Valid Todo todo,BindingResult result){
+    public String UpdateTodo(ModelMap model, @Valid Todo todo, BindingResult result){
 
         if (result.hasErrors()){
             return "todo";
